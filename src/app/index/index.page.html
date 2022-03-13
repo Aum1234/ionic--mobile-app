@@ -1,24 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
-    </ion-button>
-    <ion-title>index</ion-title>
-    <p>User email : <strong>{{ userDetail }}</strong></p>
     <br>
-    <ion-button type="submit" color="danger" expand="block" (click)="signOut()">Signout</ion-button>
+    <h1>ประวัติการบันทึก</h1>
+    <br>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="home" expand="block" shape="round"></ion-back-button>
+    </ion-button>
   </ion-toolbar>
+  <ion-button type="submit" color="danger" expand="block" (click)="signOut()">Signout</ion-button>
 </ion-header>
-
+<p>บัญชีผู้เข้าใช้งาน : <strong>{{ userDetail }}</strong></p>
 <ion-content>
-
   <ion-card *ngFor="let item of items | async">
+    <ion-avatar>
+      <img src="{{item.img}}">
+    </ion-avatar><br>
     <ion-card-title>ชื่อ : {{item.name}}</ion-card-title>
     <ion-card-title>รหัสประจำตัว : {{item.number_id}}</ion-card-title>
     <ion-card-title>กิจกรรม : {{item.work}}</ion-card-title>
     <ion-card-title>วันที่ : {{item.date}}</ion-card-title>
-    <ion-button color="primary" shape="round" (click)="remove(item.id)">ลบ</ion-button>
-    <ion-button [routerLink]=" '/edit/' + item.id">แก้ไขข้อมูล</ion-button>
+    <ion-button shape="round" color="danger" (click)="remove(item.id)">ลบ</ion-button>
+    <ion-button shape="round" color="primary" [routerLink]=" '/edit/' + item.id">แก้ไขข้อมูล</ion-button>
   </ion-card>
 
 </ion-content>

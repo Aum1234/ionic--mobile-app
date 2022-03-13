@@ -29,6 +29,7 @@ export class EditPage implements OnInit {
       this.db_numid = data.number_id;
       this.db_work = data.work;
       this.db_date = data.date;
+      this.db_img = data.img;
       console.log(data)
     }
 
@@ -39,13 +40,15 @@ export class EditPage implements OnInit {
   db_numid:string;
   db_work:string;
   db_date:string;
+  db_img:string;
 
   edit(){
     const item = {
       name: this.db_name,
       number_id: this.db_numid,
       work: this.db_work,
-      date: this.db_date
+      date: this.db_date,
+      img: this.db_img
     }
     this.itemCollecton.update(item);
   }

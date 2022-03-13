@@ -1,12 +1,18 @@
  <ion-header>
-  <ion-toolbar>
-    <ion-title>
+  <ion-toolbar color="primary">
+    <center><ion-title>
       บันทึกการทำงาน
-    </ion-title>
+    </ion-title></center>
   </ion-toolbar>
 </ion-header>
-
+<br>
 <ion-content>
+  <ion-img style="width: auto; height: 200px;" src="https://scontent.fubp1-1.fna.fbcdn.net/v/t1.15752-9/275306591_259737262893960_3233974776989127114_n.png?_nc_cat=107&ccb=1-5&_nc_sid=ae9488&_nc_ohc=Ja6tJ0GoXoYAX_8Iw-H&_nc_ht=scontent.fubp1-1.fna&oh=03_AVJ-9NE10l87GiBoLkmznfn7vA0s9D3SfY6KLGgCp51kbw&oe=625316DE"></ion-img>
+  <br>
+  <ion-item>
+    <ion-label position="stacked">ลิงค์โปรไฟล์</ion-label>
+    <ion-input [(ngModel)]="db_img"></ion-input>
+  </ion-item>
   <ion-item>
     <ion-label position="stacked">ชื่อ</ion-label>
     <ion-input [(ngModel)]="db_name"></ion-input>
@@ -27,7 +33,7 @@
   <ion-button expand="full" color="success" shape="round" (click)="add()">
       บันทึก
   </ion-button>
-  <ion-button expand="full" color="warning" shape="round" routerLink='/index'>
+  <ion-button expand="full" color="primary" shape="round" routerLink='/index'>
     ประวัติการบันทึก
 </ion-button>
 </ion-content>

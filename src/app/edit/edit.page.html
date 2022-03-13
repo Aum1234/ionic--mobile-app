@@ -6,8 +6,14 @@
     <ion-title>แก้ไขข้อมูล</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<br>
+<ion-img style="width: auto; height: 200px;" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/a9b2f152157575.59075366924b0.png"></ion-img>
+<br>
 <ion-content>
+  <ion-item>
+    <ion-label position="stacked">ลิงค์โปรไฟล์</ion-label>
+    <ion-input [(ngModel)]="db_img"></ion-input>
+  </ion-item>
   <ion-item>
     <ion-label position="stacked">ชื่อ</ion-label>
     <ion-input [(ngModel)]="db_name"></ion-input>

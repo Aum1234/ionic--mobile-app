@@ -1,13 +1,15 @@
 <ion-header>
-  <ion-toolbar color="danger">
-    <ion-title>User Registeration</ion-title>
+  <ion-toolbar color="primary">
+    <center><ion-title>User Registeration</ion-title></center>
   </ion-toolbar>
 </ion-header>
-
+<br>
+<ion-img style="width: auto; height: 200px;" src="https://scontent.fubp1-1.fna.fbcdn.net/v/t1.15752-9/275306591_259737262893960_3233974776989127114_n.png?_nc_cat=107&ccb=1-5&_nc_sid=ae9488&_nc_ohc=Ja6tJ0GoXoYAX_8Iw-H&_nc_ht=scontent.fubp1-1.fna&oh=03_AVJ-9NE10l87GiBoLkmznfn7vA0s9D3SfY6KLGgCp51kbw&oe=625316DE"></ion-img>
+<br>
 <ion-content class="ion-padding">
   <form class="form" [formGroup]="userForm" (ngSubmit)="signUp(userForm.value)">
     <ion-item>
-      <ion-label position="floating">Email</ion-label>
+      <ion-label position="floating" color="primary">Email</ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
     </ion-item>
     
