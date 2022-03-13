@@ -1,8 +1,9 @@
- <ion-header>
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      บันทึกการทำงาน
-    </ion-title>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="index"></ion-back-button>
+    </ion-button>
+    <ion-title>แก้ไขข้อมูล</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -23,11 +24,8 @@
     <ion-label position="stacked">วันที่</ion-label>
     <ion-input [(ngModel)]="db_date"></ion-input>
   </ion-item>
-
-  <ion-button expand="full" color="success" shape="round" (click)="add()">
-      บันทึก
-  </ion-button>
-  <ion-button expand="full" color="warning" shape="round" routerLink='/index'>
-    ประวัติการบันทึก
+  <ion-button expand="block" fitll="outline" (click)="edit()">
+    edit
 </ion-button>
+
 </ion-content>

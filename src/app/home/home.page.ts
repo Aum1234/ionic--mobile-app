@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,35 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private firestore: AngularFirestore) {
+    this.workCollection = firestore.collection<any>('works')
+    
+  }
+  workCollection: AngularFirestoreCollection<any>
+
+  db_name:string;
+  db_numid:string;
+  db_work:string;
+  db_date:string;
+
+  add(){
+    const id = this.firestore.createId();
+    const work = {
+      id: id,
+      name: this.db_name,
+      number_id: this.db_numid,
+      work: this.db_work,
+      date: this.db_date
+    }
+    this.workCollection.doc(id).set(work)
+    .then(()=>{
+      this.db_name=""
+      this.db_numid=""
+      this.db_work=""
+      this.db_date=""
+    }
+
+    )
+  }
 
 }

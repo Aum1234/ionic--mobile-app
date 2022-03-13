@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-button>
+    <ion-title>index</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let item of items | async">
+    <ion-card-title>ชื่อ : {{item.name}}</ion-card-title>
+    <ion-card-title>รหัสประจำตัว : {{item.number_id}}</ion-card-title>
+    <ion-card-title>กิจกรรม : {{item.work}}</ion-card-title>
+    <ion-card-title>วันที่ : {{item.date}}</ion-card-title>
+    <ion-button color="primary" shape="round" (click)="remove(item.id)">ลบ</ion-button>
+    <ion-button [routerLink]=" '/edit/' + item.id">แก้ไขข้อมูล</ion-button>
+  </ion-card>
+
+</ion-content>
