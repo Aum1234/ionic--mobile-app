@@ -4,6 +4,9 @@
       <ion-back-button defaultHref="home"></ion-back-button>
     </ion-button>
     <ion-title>index</ion-title>
+    <p>User email : <strong>{{ userDetail }}</strong></p>
+    <br>
+    <ion-button type="submit" color="danger" expand="block" (click)="signOut()">Signout</ion-button>
   </ion-toolbar>
 </ion-header>
 
